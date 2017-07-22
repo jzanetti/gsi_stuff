@@ -1,0 +1,70 @@
+met_guess::
+!var     level    crtm_use    desc              orig_name
+  ps        1      -1         surface_pressure     ps
+  z         1      -1         geopotential_height  phis
+  u        @lev       2         zonal_wind           u
+  v        @lev       2         meridional_wind      v
+  div      @lev      -1         zonal_wind           div
+  vor      @lev      -1         meridional_wind      vor
+  tv       @lev       2         virtual_temperature  tv
+  q        @lev       2         specific_humidity    sphu
+  oz       @lev       2         ozone                ozone
+  cw       @lev      10         cloud_condensate     cw
+  ql       @lev      10         cloud_liquid         ql
+  qi       @lev      10         cloud_ice            qi
+  qr       @lev      10         rain                 qr
+  qs       @lev      10         snow                 qs
+  qg       @lev      10         graupel              qg
+  qnr      @lev      10         rain_noconc          qnr
+::
+
+state_derivatives::
+!var  level  src
+ ps   1      met_guess
+ u    @lev     met_guess
+ v    @lev     met_guess
+ tv   @lev     met_guess
+ q    @lev     met_guess
+ oz   @lev     met_guess
+ cw   @lev     met_guess
+ prse @lev0     met_guess
+::
+
+state_tendencies::
+!var  levels  source
+ u    @lev      met_guess
+ v    @lev      met_guess
+ tv   @lev      met_guess
+ q    @lev      met_guess
+ cw   @lev      met_guess
+ oz   @lev      met_guess
+ prse @lev0      met_guess
+::
+
+state_vector::  
+!var     level  itracer source     funcof
+ u        @lev      0     met_guess    u
+ v        @lev      0     met_guess    v
+ tv       @lev      0     met_guess    tv
+ tsen     @lev      0     met_guess    tv,q
+ q        @lev      1     met_guess    q
+ oz       @lev      1     met_guess    oz
+ cw       @lev      1     met_guess    cw
+ prse     @lev0      0     met_guess    prse
+ ps        1      0     met_guess    prse
+ sst       1      0     met_guess    sst
+::
+
+control_vector::
+!var     level  itracer as/tsfc_sdv  an_amp0   source  funcof
+ sf       @lev      0       1.00        -1.0     state    u,v
+ vp       @lev      0       1.00        -1.0     state    u,v
+ ps        1      0       0.50        -1.0     state    prse
+ t        @lev      0       0.70        -1.0     state    tv
+ q        @lev      1       0.70        -1.0     state    q
+ oz       @lev      1       0.50        -1.0     state    oz
+ sst       1      0       1.00        -1.0     state    sst
+ cw       @lev      1       1.00        -1.0     state    cw
+ stl       1      0       1.00        -1.0     motley   sst
+ sti       1      0       1.00        -1.0     motley   sst
+::

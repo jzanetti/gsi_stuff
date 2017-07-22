@@ -1,0 +1,8 @@
+1. We don't need to install EnKF (we may get errors when install cloud analysis with EnKF):
+=> src/makefile_DTC => remove the line "( cd main/enkf; ls; echo "Making $@ in `pwd`" ; make -f Makefile );"
+
+2. There is a bug when run GSD cloud analysis without surface data:
+In src/main/gsdcloudanalysis.F90, the memory of wimaxstation is only assigned if there's "mta_cld" data (allocate(wimaxstation(numsao))),
+however, the original code assign value to wimaxstation even it's memory is not assigned (e.g., only radar is analyzed). The solution is:
+Origin => "wimaxstation=0.0_r_single"
+Modified => "!wimaxstation=0.0_r_single"
