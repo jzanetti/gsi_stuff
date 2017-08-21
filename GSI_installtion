@@ -1,8 +1,32 @@
+************************************************************
+GSI Installation:
+************************************************************
+
 1. We don't need to install EnKF (we may get errors when install cloud analysis with EnKF):
 => src/makefile_DTC => remove the line "( cd main/enkf; ls; echo "Making $@ in `pwd`" ; make -f Makefile );"
 
-2. There is a bug when run GSD cloud analysis without surface data:
-In src/main/gsdcloudanalysis.F90, the memory of wimaxstation is only assigned if there's "mta_cld" data (allocate(wimaxstation(numsao))),
-however, the original code assign value to wimaxstation even it's memory is not assigned (e.g., only radar is analyzed). The solution is:
+2. There is a bug when run GSD cloud analysis without surface data (metar):
+In src/main/gsdcloudanalysis.F90, the memory of wimaxstation is only assigned if the "mta_cld" data present (see "allocate(wimaxstation(numsao))"),
+however, the original code assign value to wimaxstation even it's memory is not assigned (e.g., only radar is analyzed). If you want to run cloud analysis without METAR, you need to make the following change:
 Origin => "wimaxstation=0.0_r_single"
 Modified => "!wimaxstation=0.0_r_single"
+
+3. In order to view the impact from the cloud analysis, we can write the 3d model fields to NETCDF. The only required extra file is "netcdf_processing.f90":
+	Compilation in GSI:
+		1. in src/libs/gsdcloud/make.filelist, add netcdf_processsing.f90 under SRC_FILES
+		e.g., 	SRC_FILES = netcdf_processing.f90 \
+					ARPS_cldLib.f90 \
+					....
+		2. in src/libs/gsdcloud/make.dependencies, add netcdf_processing.f90
+		e.g., 	constants.o : constants.f90 kinds.o
+			nc_processing.o : netcdf_processing.f90
+				....
+	Use netcdf_processing.f90 in the cloud analysis:
+		e.g., in src/libs/gsdcloud/cloudCover_Surface.f90, add:
+			use nc_processing, only: write_netcdf
+				...
+			call write_netcdf('cld_cover_3d_step3.nc', 'cld_cover_3d', &
+					1, nlat, nlon, nsig, &
+					lat_in, lon_in, lvls_in, cld_cover_3d)
+				...
+
