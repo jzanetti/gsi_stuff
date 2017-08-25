@@ -4,6 +4,7 @@ import affli
 import shutil
 from string import Template
 import logging
+from pkg_resources import resource_filename
 
 class MyTemplate(Template):
     delimiter = '@'
@@ -44,7 +45,8 @@ def create_script_for_run_gsi_region():
     logging.info('------------------------------------------- ')
     
     logging.info(' -- Getting run_gsi_regional template from: {}\n'.format('etc/run_gsi_regional_template.ksh'))
-    filein = open('etc/run_gsi_regional_template.ksh')
+    #filein = open('etc/run_gsi_regional_template.ksh')
+    filein = open(resource_filename(__name__, 'etc/run_gsi_regional_template.ksh'))
     src = MyTemplate(filein.read())
     
     """parmater preprocessing"""
@@ -87,7 +89,8 @@ def create_anavinfo_arw_netcdf(bk_vertical_level):
     logging.info('------------------------------------------- ')
     
     logging.info(' -- Getting navinfo_arw_netcdf template from: {} '.format('etc/anavinfo_arw_netcdf_template'))
-    filein = open('etc/anavinfo_arw_netcdf_template')
+    #filein = open('etc/anavinfo_arw_netcdf_template')
+    filein = open(resource_filename(__name__, 'etc/anavinfo_arw_netcdf_template'))
     src = MyTemplate(filein.read())
 
     """parse arguments"""
@@ -107,7 +110,8 @@ def create_comgsi_namelist(single_obs=False):
     logging.info('------------------------------------------- ')
     
     logging.info(' -- Getting GSI namelist template from: {} '.format('etc/comgsi_namelist_template.sh'))
-    filein = open('etc/comgsi_namelist_template.sh')
+    #filein = open('etc/comgsi_namelist_template.sh')
+    filein = open(resource_filename(__name__, 'etc/comgsi_namelist_template.sh'))
     src = MyTemplate(filein.read())
 
     """parse arguments"""
