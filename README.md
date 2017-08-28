@@ -11,7 +11,7 @@ Test GSI with external wps/wrf/gsi pkgs
 (5) wrf-3.9.1-intel_test.tar.bz2
 (6) wps-3.9.1-intel_test.tar.bz2
 (7) gsi-3.5-intel_test.tar.bz2
-* CRTM_2.2.3.tar.gz
+(8) CRTM_2.2.3.tar.gz
 
 In the box: run `conda install -f` for all of the above required packages
             run `export LD_LIBRARY_PATH=/opt/miniconda2/envs/wrf/lib:$LD_LIBRARY_PATH`
