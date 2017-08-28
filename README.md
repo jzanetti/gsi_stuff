@@ -2,7 +2,7 @@
 reference:
 https://www.da.ucar.edu/sites/default/files/Benjamin_BlueDA-GSD-8Mar2016.pdf
 
-Test GSI with external wps/wrf/gsi pkgs \n
+Test GSI with external wps/wrf/gsi pkgs
 1. Install the necessary packages from `/home/szhang/GitHub_branches/conda_pkg/intel-parallel/cloud/release`
 (1) hdf5-1.8.19-intel_test.tar.bz2
 (2) netcdf-4.4.1.1-intel_test.tar.bz2
