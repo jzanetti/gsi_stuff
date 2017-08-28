@@ -14,17 +14,17 @@ Test GSI with external wps/wrf/gsi pkgs
 (8) CRTM_2.2.3.tar.gz <br />
 <br />
 In the box: <br />
-   run `conda install -f` for all of the above required packages <br />
-   run `export LD_LIBRARY_PATH=/opt/miniconda2/envs/wrf/lib:$LD_LIBRARY_PATH` <br />
-   run `conda install krb5 -n wrf` <br />
+&nbsp;run `conda install -f` for all of the above required packages <br />
+&nbsp;run `export LD_LIBRARY_PATH=/opt/miniconda2/envs/wrf/lib:$LD_LIBRARY_PATH` <br />
+&nbsp;run `conda install krb5 -n wrf` <br />
 <br />
 2. Test if the builds are working: <br />
-(1) => cd /opt/miniconda2/envs/wrf/wps-3.9 <br />
-    ldd geogrid.exe / ungrib.exe / metgrid.exe <br />
-(2) => cd /opt/miniconda2/envs/wrf/wrf-3.9.1/test/em_real <br />
-    ldd real.exe / wrf.exe <br />
-(3) => cd /opt/miniconda2/envs/wrf/comGSIv3.5_EnKFv1.1/run <br />
-    ldd gsi.exe <br />
+&nbsp;(1) => cd /opt/miniconda2/envs/wrf/wps-3.9 <br />
+&nbsp;&nbsp;ldd geogrid.exe / ungrib.exe / metgrid.exe <br />
+&nbsp;(2) => cd /opt/miniconda2/envs/wrf/wrf-3.9.1/test/em_real <br />
+&nbsp;&nbsp;ldd real.exe / wrf.exe <br />
+&nbsp;(3) => cd /opt/miniconda2/envs/wrf/comGSIv3.5_EnKFv1.1/run <br />
+&nbsp;&nbsp;ldd gsi.exe <br />
 
 
 
