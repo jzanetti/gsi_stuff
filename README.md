@@ -8,23 +8,27 @@ Test GSI with external wps/wrf/gsi pkgs
 (2) netcdf-4.4.1.1-intel_test.tar.bz2 <br />
 (3) netcdf-fortran-4.4.4-intel_test.tar.bz2 <br />
 (4) jasper_test-2.0.12-intel_test.tar.bz2 <br />
-(5) wrf-3.9.1-intel_test.tar.bz2 <br />
-(6) wps-3.9.1-intel_test.tar.bz2 <br />
+(5) wrf_test-3.9.1-intel_test.tar.bz2 <br />
+(6) wps_test-3.9.1-intel_test.tar.bz2 <br />
 (7) gsi-3.5-intel_test.tar.bz2 <br />
-(8) CRTM_2.2.3.tar.gz <br />
+(8) wrfda_test-3.9.1-intel_test.tar.bz2 <br />
 <br />
 In the box: <br />
-&nbsp;run `conda install -f` for all of the above required packages <br />
-&nbsp;run `export LD_LIBRARY_PATH=/opt/miniconda2/envs/wrf/lib:$LD_LIBRARY_PATH` <br />
-&nbsp;run `conda install krb5 -n wrf` <br />
+&nbsp;&nbsp;&nbsp;run `conda install -f` for all of the above required packages <br />
+&nbsp;&nbsp;&nbsp;run `conda install krb5 -n wrf` <br />
+&nbsp;&nbsp;&nbsp;run `conda install crtm -n wrf` <br />
+&nbsp;&nbsp;&nbsp;run `export LD_LIBRARY_PATH=/opt/miniconda2/envs/wrf/lib:$LD_LIBRARY_PATH` <br />
 <br />
+
 2. Test if the builds are working: <br />
-&nbsp;(1) => cd /opt/miniconda2/envs/wrf/wps-3.9 <br />
-&nbsp;&nbsp;ldd geogrid.exe / ungrib.exe / metgrid.exe <br />
-&nbsp;(2) => cd /opt/miniconda2/envs/wrf/wrf-3.9.1/test/em_real <br />
-&nbsp;&nbsp;ldd real.exe / wrf.exe <br />
-&nbsp;(3) => cd /opt/miniconda2/envs/wrf/comGSIv3.5_EnKFv1.1/run <br />
-&nbsp;&nbsp;ldd gsi.exe <br />
+&nbsp;&nbsp;(1) => cd /opt/miniconda2/envs/wrf/wps-3.9 <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ldd geogrid.exe / ungrib.exe / metgrid.exe <br />
+&nbsp;&nbsp;(2) => cd /opt/miniconda2/envs/wrf/wrf-3.9.1/test/em_real <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ldd real.exe / wrf.exe <br />
+&nbsp;&nbsp;(3) => cd /opt/miniconda2/envs/wrf/comGSIv3.5_EnKFv1.1/run <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ldd gsi.exe <br />
+&nbsp;&nbsp;(4) => cd /opt/miniconda2/envs/wrf/wrfda-3.9.1/var/build <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ldd da_wrfvar.exe <br />
 
 
 
