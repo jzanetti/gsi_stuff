@@ -33,7 +33,7 @@ In the box: <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ldd da_wrfvar.exe <br />
 <br />
 <br />
-3. Produce observations:
+3. Produce observations: <br />
 &nbsp;&nbsp; =>`cd /opt/miniconda2/envs/wrf/bufr_stuff/scripts`
 &nbsp;&nbsp; =>`python get_ddb.py research us-west-2 201708211100 201708211300 -50.0 -30.0 150.0 180.0`
 &nbsp;&nbsp;&nbsp;&nbsp; -- we would get a file called `Output.txt` under the working directory
@@ -43,7 +43,7 @@ In the box: <br />
 <br />
 <br />
 4. Run GSI <br />
-&nbsp;&nbsp; =>`cd /opt/miniconda2/envs/wrf/lib/python2.7/site-packages/gsi_stuff` <br />
-&nbsp;&nbsp; =>`python Main_Script.py 2017082112 /mnt/WRF/gsi_test/practice_11 4 3 50 /mnt/WRF/wrf_1FMTHf/wrfinput_d01 /opt/miniconda2/envs/wrf/crtm-2.2.3/CRTM_2.2.3 /opt/miniconda2/envs/wrf/comGSIv3.5_EnKFv1.1` <br />
+&nbsp;&nbsp; `cd /opt/miniconda2/envs/wrf/lib/python2.7/site-packages/gsi_stuff` <br />
+&nbsp;&nbsp; `python Main_Script.py 2017082112 /mnt/WRF/gsi_test/practice_11 4 3 50 /mnt/WRF/wrf_1FMTHf/wrfinput_d01 /opt/miniconda2/envs/wrf/crtm-2.2.3/CRTM_2.2.3 /opt/miniconda2/envs/wrf/comGSIv3.5_EnKFv1.1` <br />
 
 
