@@ -43,7 +43,7 @@ In the box: <br />
 <br />
 <br />
 4. Run GSI <br />
-&nbsp;&nbsp; => cd /opt/miniconda2/envs/wrf/lib/python2.7/site-packages/gsi_stuff <br /> <br />
+&nbsp;&nbsp; => cd /opt/miniconda2/envs/wrf/lib/python2.7/site-packages/gsi_stuff <br />
 &nbsp;&nbsp; => python Main_Script.py 2017082112 /mnt/WRF/gsi_test/practice_11 4 3 50 /mnt/WRF/wrf_1FMTHf/wrfinput_d01 /opt/miniconda2/envs/wrf/crtm-2.2.3/CRTM_2.2.3 /opt/miniconda2/envs/wrf/comGSIv3.5_EnKFv1.1 <br />
 
 
