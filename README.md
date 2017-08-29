@@ -2,24 +2,24 @@
 reference:
 https://www.da.ucar.edu/sites/default/files/Benjamin_BlueDA-GSD-8Mar2016.pdf
 
-Test GSI with external wps/wrf/gsi pkgs
+**Test GSI with external wps/wrf/gsi pkgs** <br />
 1. Install the necessary packages from `/home/szhang/GitHub_branches/conda_pkg/intel-parallel/cloud/release` <br />
-(1) hdf5-1.8.19-intel_test.tar.bz2 <br />
-(2) netcdf-4.4.1.1-intel_test.tar.bz2 <br />
-(3) netcdf-fortran-4.4.4-intel_test.tar.bz2 <br />
-(4) jasper_test-2.0.12-intel_test.tar.bz2 <br />
-(5) wrf_test-3.9.1-intel_test.tar.bz2 <br />
-(6) wps_test-3.9.1-intel_test.tar.bz2 <br />
-(7) gsi-3.5-intel_test.tar.bz2 <br />
-(8) wrfda_test-3.9.1-intel_test.tar.bz2 <br />
-(9) bufr_stuff-0.1.0-intel_test.tar.bz2 <br />
-(10) gsi_stuff-0.1.0-python.tar.bz2 <br />
+- hdf5-1.8.19-intel_test.tar.bz2 <br />
+- netcdf-4.4.1.1-intel_test.tar.bz2 <br />
+- netcdf-fortran-4.4.4-intel_test.tar.bz2 <br />
+- jasper_test-2.0.12-intel_test.tar.bz2 <br />
+- wrf_test-3.9.1-intel_test.tar.bz2 <br />
+- wps_test-3.9.1-intel_test.tar.bz2 <br />
+- gsi-3.5-intel_test.tar.bz2 <br />
+- wrfda_test-3.9.1-intel_test.tar.bz2 <br />
+- bufr_stuff-0.1.0-intel_test.tar.bz2 <br />
+- gsi_stuff-0.1.0-python.tar.bz2 <br />
 <br />
-In the box: <br />
-&nbsp;&nbsp;&nbsp;run `conda install -f` for all of the above required packages <br />
-&nbsp;&nbsp;&nbsp;run `conda install krb5 -n wrf` <br />
-&nbsp;&nbsp;&nbsp;run `conda install crtm -n wrf` <br />
-&nbsp;&nbsp;&nbsp;run `export LD_LIBRARY_PATH=/opt/miniconda2/envs/wrf/lib:$LD_LIBRARY_PATH` <br />
+2. In the box: <br />
+ -run `conda install -f` for all of the above required packages <br />
+ - run `conda install krb5 -n wrf` <br />
+ - run `conda install crtm -n wrf` <br />
+ - run `export LD_LIBRARY_PATH=/opt/miniconda2/envs/wrf/lib:$LD_LIBRARY_PATH` <br />
 <br />
 <br />
 2. Test if the builds are working: <br />
