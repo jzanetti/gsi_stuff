@@ -1,4 +1,3 @@
-import gsi_config
 import os
 import affli
 import shutil
@@ -9,7 +8,7 @@ from pkg_resources import resource_filename
 class MyTemplate(Template):
     delimiter = '@'
 
-def create_folder():
+def create_folder(gsi_config):
     logging.info('-------------------------------------------')
     logging.info('1.1 Create Directories')
     logging.info('-------------------------------------------')
@@ -39,7 +38,7 @@ def create_folder():
     affli.run_executables('ln -sf {} {}'.format(gsi_config.path_config['gsi_root'] + '/fix/*', gsi_config.fix_dir), 
                           gsi_config.gsi_working_dir)
 
-def create_script_for_run_gsi_region():
+def create_script_for_run_gsi_region(gsi_config):
     logging.info('------------------------------------------- ')
     logging.info('1.2 Create GSI scripts ')
     logging.info('------------------------------------------- ')
@@ -83,7 +82,7 @@ def create_script_for_run_gsi_region():
     text_file.write(result)
     text_file.close()
 
-def create_anavinfo_arw_netcdf(bk_vertical_level):
+def create_anavinfo_arw_netcdf(gsi_config, bk_vertical_level):
     logging.info('------------------------------------------- ')
     logging.info('1.3 Create NETCDF info ')
     logging.info('------------------------------------------- ')
@@ -104,7 +103,7 @@ def create_anavinfo_arw_netcdf(bk_vertical_level):
     text_file.write(result)
     text_file.close()
 
-def create_comgsi_namelist(single_obs=False):
+def create_comgsi_namelist(gsi_config, single_obs=False):
     logging.info('------------------------------------------- ')
     logging.info('1.4 Create GSI namelist')
     logging.info('------------------------------------------- ')
