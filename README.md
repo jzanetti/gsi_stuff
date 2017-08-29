@@ -34,16 +34,16 @@ In the box: <br />
 <br />
 <br />
 3. Produce observations: <br />
-&nbsp;&nbsp; =>`cd /opt/miniconda2/envs/wrf/bufr_stuff/scripts`
-&nbsp;&nbsp; =>`python get_ddb.py research us-west-2 201708211100 201708211300 -50.0 -30.0 150.0 180.0`
-&nbsp;&nbsp;&nbsp;&nbsp; -- we would get a file called `Output.txt` under the working directory
-&nbsp;&nbsp; =>`/opt/miniconda2/envs/wrf/bufr_stuff/bin`
-&nbsp;&nbsp; =>`./ascii2bufr_conv.exe ../scripts/Output.txt test.bufr ../etc/conv_prep.bufrtable`
-&nbsp;&nbsp;&nbsp;&nbsp; -- we would get a bufr file called `test.bufrt` under the working directory
+&nbsp;&nbsp; => cd /opt/miniconda2/envs/wrf/bufr_stuff/scripts <br />
+&nbsp;&nbsp; => python get_ddb.py research us-west-2 201708211100 201708211300 -50.0 -30.0 150.0 180.0 <br />
+&nbsp;&nbsp;&nbsp;&nbsp; -- we would get a file called `Output.txt` under the working directory <br />
+&nbsp;&nbsp; => cd /opt/miniconda2/envs/wrf/bufr_stuff/bin <br />
+&nbsp;&nbsp; => ./ascii2bufr_conv.exe ../scripts/Output.txt test.bufr ../etc/conv_prep.bufrtable <br />
+&nbsp;&nbsp;&nbsp;&nbsp; -- we would get a bufr file called `test.bufrt` under the working directory <br />
 <br />
 <br />
 4. Run GSI <br />
-&nbsp;&nbsp; `cd /opt/miniconda2/envs/wrf/lib/python2.7/site-packages/gsi_stuff` <br />
-&nbsp;&nbsp; `python Main_Script.py 2017082112 /mnt/WRF/gsi_test/practice_11 4 3 50 /mnt/WRF/wrf_1FMTHf/wrfinput_d01 /opt/miniconda2/envs/wrf/crtm-2.2.3/CRTM_2.2.3 /opt/miniconda2/envs/wrf/comGSIv3.5_EnKFv1.1` <br />
+&nbsp;&nbsp; => cd /opt/miniconda2/envs/wrf/lib/python2.7/site-packages/gsi_stuff <br /> <br />
+&nbsp;&nbsp; => python Main_Script.py 2017082112 /mnt/WRF/gsi_test/practice_11 4 3 50 /mnt/WRF/wrf_1FMTHf/wrfinput_d01 /opt/miniconda2/envs/wrf/crtm-2.2.3/CRTM_2.2.3 /opt/miniconda2/envs/wrf/comGSIv3.5_EnKFv1.1 <br />
 
 
