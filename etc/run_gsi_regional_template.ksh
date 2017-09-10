@@ -443,9 +443,9 @@ esac
 #          ssmis_uas_f16 ssmis_img_f16 ssmis_env_f16 mhs_metop_b \
 #          hirs4_metop_b hirs4_n19 amusa_n19 mhs_n19"
 
-# listall=`ls pe* | cut -f2 -d"." | awk '{print substr($0, 0, length($0)-3)}' | sort | uniq `
+  listall=`ls pe* | cut -f2 -d"." | awk '{print substr($0, 0, length($0)-3)}' | sort | uniq `
 # the following line is modified to let the program find pe*conv_*, otherwise if finds pe*con_*
- listall=`ls pe* | cut -f2 -d"." | awk '{print substr($0, 0, length($0)-2)}' | sort | uniq `
+# listall=`ls pe* | cut -f2 -d"." | awk '{print substr($0, 0, length($0)-2)}' | sort | uniq `
 
    for type in $listall; do
       count=`ls pe*${type}_${loop}* | wc -l`

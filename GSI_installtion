@@ -30,3 +30,15 @@ Modified => "!wimaxstation=0.0_r_single"
 					lat_in, lon_in, lvls_in, cld_cover_3d)
 				...
 
+************************************************************
+BUFR codes:
+************************************************************
+FM-code		type			bufr-code
+--------------------------------------------
+FM-12		synop(t,q,uv,ps)	181, 181, 181, 181
+FM-88		amv(uv)			146
+FM-15		metar(t,q,uv,ps)	181, 181, 181, 181
+FM-13		ship(t,q,uv,ps)		183, 183, 183, 183
+FM-18		ship(t,q,uv,ps)		183, 183, 183, 183
+FM-42 amdar(t,q,uv,ps) 231, 231, 231, 231
+
